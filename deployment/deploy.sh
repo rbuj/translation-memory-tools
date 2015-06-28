@@ -52,6 +52,9 @@ copy_files() {
     mkdir $2/quality
     cp *.html $2/quality
 
+    # ISO lists
+    cp $1/tm-git/src/isolists/*.html $2
+
     # Log
     rm -r -f $2/logs
     mkdir $2/logs
