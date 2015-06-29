@@ -33,10 +33,9 @@ class Target(object):
 
 class Translation(object):
 
-    def __init__(self, source, all_targets, targets):
+    def __init__(self, source, target):
         self.source = source
-        self.all_targets = all_targets
-        self.targets = targets
+        self.target = target
 
 
 def read_po_file(filename):
@@ -47,15 +46,8 @@ def read_po_file(filename):
         if entry.translated() is False:
             continue
 
-        msgid = entry.msgid
-        for source in msgid.split(';'):
-            targets = []
-            msgstr = entry.msgstr.replace(',', ';')
-            for target in msgstr.split(';'):
-                targets.append(Target(target.strip()))
-
-            translation = Translation(source.strip(), entry.msgstr, targets)
-            translations.append(translation)
+        translation = Translation(entry.msgid, entry.msgstr)
+        translations.append(translation)
 
     return translations
 

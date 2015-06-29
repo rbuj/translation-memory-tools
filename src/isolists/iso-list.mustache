@@ -16,24 +16,23 @@
     <!--#include virtual="/ssi/ads/superior.html" -->
     <!--#include virtual="/ssi/header.html" -->
     <!-- bodyContent -->
+
+
+      <h1 class="section">Introducció</h1>
       <div class="bodyRecurs">
       <p>{{text}}</p>
-    <table border="1" cellpadding="5px" cellspacing="5px" style="border-collapse:collapse;">
-      <tr>
-        <th>Anglès</th>
-        <th>Català</th>
-      </tr>
-    {{#entries}}
-      <tr>
-        <td>{{source}}</td>
-        <td>{{target}}</td>
-        </td>
-      </tr>
-    {{/entries}}
-    </table>      
-
-          
-
+        <table border="1" cellpadding="5px" cellspacing="5px" style="border-collapse:collapse;">
+          <tr>
+            <th>Anglès</th>
+            <th>Català</th>
+          </tr>
+        {{#entries}}
+          <tr>
+            <td>{{source}}</td>
+            <td>{{target}}</td>
+          </tr>
+        {{/entries}}
+        </table>
       </div>
     </div>
     <!--#include virtual="/ssi/footer-g.html" -->
